@@ -10,9 +10,9 @@ spec:
   serviceUnhealthySecondThreshold: 300 # Config for the health check threshold for service. Default value is 60.
   deploymentUnhealthySecondThreshold: 300 # Config for the health check threshold for deployments. Default value is 60.
   serveConfig:
-    importPath: fruit.deployment_graph
+    importPath: my_deployment.deployment_graph
     runtimeEnv: |
-      working_dir: "https://github.com/ray-project/test_dag/archive/c620251044717ace0a4c19d766d43c5099af8a77.zip"
+      working_dir: "https://github.com/oleksandrvedmid/sample/blob/master/sample_code.zip"
     deployments:
       - name: MangoStand
         numReplicas: 1
@@ -88,10 +88,10 @@ spec:
                       fieldPath: status.podIP
               resources:
                 limits:
-                  cpu: 2
+                  cpu: 1
                   memory: 2Gi
                 requests:
-                  cpu: 2
+                  cpu: 500m
                   memory: 2Gi
               ports:
                 - containerPort: 6379
